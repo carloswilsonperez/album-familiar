@@ -44,6 +44,9 @@ def gallery(request):
             
         if (yearId == '2010p'):
             yearId = 'de Posada Kinder, 15-Dic-2010'
+            
+        if (yearId == '2014n'):
+            yearId = 'de Noviembre 2014'
         
         return render(request, 'home/family.html', context={ 'image_names': image_list, 'yearId': yearId }) # will make a get request on the class_students view 
     
