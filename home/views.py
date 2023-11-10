@@ -18,7 +18,7 @@ def about(request):
 
 # ========================================================================================
 
-def gallery(request):
+def gallery2(request):
     with open(os.path.join(os.path.dirname(__file__), 'file_names.txt'), 'r') as f:
         lines = f.readlines()
         image_list = list(map(clean_file_name, lines))
@@ -28,7 +28,7 @@ def gallery(request):
 
 # ========================================================================================
 
-def family(request):
+def gallery(request):
     if request.method == 'POST':
         yearId = request.POST.get('yearId')
         fileNames = f'file_names{yearId}.txt'
