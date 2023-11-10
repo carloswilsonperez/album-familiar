@@ -36,12 +36,21 @@
 			<div class="row">
 
 			{% for image in image_names %}
-				<div class="col-lg-3 col-md-4 col-sm-6">
+
+				{% if 'jpg' in image or 'jpeg' in image or 'JPEG' in image or 'JPG' in image %}
 					<a class="gallery__item fresco" href="{% static image %}" data-fresco-group="gallery">
 						<img src="{% static image %}" alt="" loading="lazy">
-						<figcaption>{{image|slice:"16:"}}</figcaption>
+						<figcaption>{{image|slice:"17:"}}</figcaption>
 					</a>
-				</div>
+				{% else %}
+					<a class="gallery__item" href="">
+						<video width='350' preload="none" controls>
+							<source src='{% static image %}' type='video/mp4' loading="lazy">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+				{% endif %}
+		
 			{% endfor %}
 			</div>
 		</div>
