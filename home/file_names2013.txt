@@ -1,5 +1,5 @@
 home/img/gallery2013/IMG_20131006_121010.jpg
-home/img/gallery2013/diciembre 2013.jpg
+home/img/gallery2013/diciembre_2013.jpg
 home/img/gallery2013/IMG_20131006_121029.jpg
 home/img/gallery2013/IMG_20131120_075259_1.jpg
 home/img/gallery2013/IMG_20131120_075220.jpg
