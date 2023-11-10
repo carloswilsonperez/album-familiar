@@ -22,13 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '52@y%9$#3#)9cff)jdcl&0-@4(u!y)dw@l2!e2s8!(jrrta_u+'
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = '52@y%9$#3#)9cff)jdcl&0-@4(u!y)dw@l2!e2s8!(jrrta_u+'
+# SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
-ALLOWED_HOSTS = ['plankton-app-2hha3.ondigitalocean.app', 'www.the-osito-project.com', 'localhost', '127.0.0.1']
-# os.getenv('ALLOWED_HOSTS').split(',')
+DEBUG = True
+ALLOWED_HOSTS = ['*']
+#DEBUG = os.getenv('DEBUG')
+#ALLOWED_HOSTS = ['plankton-app-2hha3.ondigitalocean.app', 'www.the-osito-project.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
