@@ -1,0 +1,34 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+	<!-- Header Section end -->
+	<section class="hero__section welcome">
+		Welcome to the Osito Project
+	</section>
+
+	<!-- Hero Section -->
+	<section class="hero__section central_image">
+		<div class="hero-slider2">
+			<div class="slide-item central_item">
+				<a class="fresco" href="{% static image %}" data-fresco-group="projects">
+					<img src="{% static image %}" alt="">
+					<figcaption>Osito - 20220914-11-38</figcaption>
+				</a>
+			</div>
+		</div>
+		<div class="hero-text-slider">
+			<div class="text-item">
+			</div>
+		</div>
+	</section>
+
+	<section class="hero__section youtube-content">
+		<div class="hero-slider2 youtube">
+			<p>Visit Osito's Gallery on <a href="https://www.youtube.com/channel/UCjhwqSVmDpJ9fYOfPMubsmA" target="_blank">Youtube!</a></p>
+		</div>
+	</section>
+	<!-- Hero Section end -->
+
+	{% endblock %}

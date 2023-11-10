@@ -1,0 +1,44 @@
+{% extends "home/base.html" %}
+{% load static %}
+	<!-- Header Section end -->
+	{% block content %}
+	<section class="hero__section welcome">
+		Fotos {{yearId}}
+	</section>
+
+	<section class="hero__section welcome dropdown">
+		<form method="POST">
+			{% csrf_token %}
+			<select name = "yearId">
+					<option value="2004" >2004</option>
+					<option value="2005" >2005</option>
+					<option value="2006" >2006</option>
+					<option value="2007" >2007</option>
+					<option value="2008" >2008</option>
+					<option value="2009" >2009</option>
+					<option value="2010" >2010</option>
+					<option value="2011" >2011</option>
+					<option value="2012" >2012</option>
+			</select>
+			<input type="submit" class="submit" value="Ver Fotos" />
+		</form>
+	</section>
+
+	<!-- About Page -->
+	<div class="gallery__page">
+		<div class="gallery__warp">
+			<div class="row">
+
+			{% for image in image_names %}
+				<div class="col-lg-3 col-md-4 col-sm-6">
+					<a class="gallery__item fresco" href="{% static image %}" data-fresco-group="gallery">
+						<img src="{% static image %}" alt="" loading="lazy">
+						<figcaption>{{image|slice:"16:"}}</figcaption>
+					</a>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+	<!-- About Page end -->
+	{% endblock %}

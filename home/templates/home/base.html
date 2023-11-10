@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Osito Project</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Family photo album">
+	<meta name="keywords" content="photo, osito, memorial">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'home/css/slicknav.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'home/css/fresco.css' %}"/>
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="{% static 'home/css/style.css' %}"/>
+	<style>
+		figcaption {
+			text-align: center;
+			font-weight: bold;
+			color: #483C32;
+		}
+
+		.site-title {
+			font-size: 70px;
+			color: #483C32;
+		}
+
+		.welcome {
+			font-size: 35px;
+			margin-bottom: 0;
+			padding-top: 50px;
+			text-align: center;
+		}
+
+		.dropdown {
+			font-size: 20px;
+			padding-top: 40px;
+		}
+
+		.main__menu > .nav__menu > li > a {   
+			color: #483C32;
+		}
+
+		.submit {
+			color: white;
+    		background-color: #fa015f;
+    		border: none;
+		}
+
+		.central_image {
+			margin-top: 0;
+			padding-top: 40px;
+		}
+
+		.hero-slider2 {
+			text-align: center;
+		}
+
+		.hero-text-slider {
+			padding-top: 0;
+		}
+
+		.central_item {
+			cursor: none;
+		}
+
+		.main__menu > .nav__menu > li > a {   
+			color: #483C32;
+		}
+
+		.youtube-content { 
+			padding-top: 0; 
+		}
+
+		.youtube { 
+			padding-top: 0;
+		}
+
+		.youtube > p { 
+			font-size: 30px !important;
+			font-weight: 700;
+		}
+
+		.about__meta__info p { 
+			color: #483C32;
+			font-weight: 700;
+		}
+	</style>
+
+
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header Section -->
+	<header class="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-4 col-md-3 order-2 order-sm-1">
+					<div class="header__social">
+						{% comment %} <a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-instagram"></i></a> {% endcomment %}
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-6 order-1  order-md-2 text-center site-title">
+					The Osito Project
+					<a href="./index.html" class="site-logo">
+						{% comment %} <img src="img/logo.png" alt=""> {% endcomment %}
+					</a>
+				</div>
+				<div class="col-sm-4 col-md-3 order-3 order-sm-3">
+					<div class="header__switches">
+						{% comment %} <a href="#" class="search-switch"><i class="fa fa-search"></i></a> {% endcomment %}
+						{% comment %} <a href="#" class="nav-switch"><i class="fa fa-bars"></i></a> {% endcomment %}
+						{% comment %} <a href="#"><i class="fa fa-shopping-cart"></i></a> {% endcomment %}
+					</div>
+				</div>
+			</div>
+			<nav class="main__menu">
+				<ul class="nav__menu">
+					<hr />
+					<li><a href="{% url 'home' %}" class="{% if page == 'home' %}menu--active{% endif %}">Home</a></li>
+					<li><a href="{% url 'about' %}" class="{% if page == 'about' %}menu--active{% endif %}">About</a></li>
+					<li><a href="{% url 'gallery' %}" class="{% if page == 'gallery' %}menu--active{% endif %}">Gallery</a></li>
+					<li><a href="{% url 'home' %}" class="{% if page == 'quotes' %}menu--active{% endif %}">Dog Quotes</a></li>
+					<li><a href="{% url 'contact' %}" class="{% if page == 'contact' %}menu--active{% endif %}">Contact</a></li>
+					<hr />
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header Section end -->
+	{% block content %}{% endblock %}
+
+	<!-- Footer Section -->
+	<footer class="footer__section">
+		<div class="container">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			<div class="footer__copyright__text">
+				<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+			</div>
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</div>
+	</footer>
+	<!-- Footer Section end -->
+
+	<!-- Search Begin -->
+	<div class="search-model">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+			<div class="search-close-switch">+</div>
+			<form class="search-model-form">
+				<input type="text" id="search-input" placeholder="Search here.....">
+			</form>
+		</div>
+	</div>
+	<!-- Search End -->
+
+	<!--====== Javascripts & Jquery ======-->
+
+	<script src="{% static 'home/js/vendor/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'home/js/jquery.slicknav.min.js' %}"></script>
+	<script src="{% static 'home/js/slick.min.js' %}"></script>
+	<script src="{% static 'home/js/fresco.min.js' %}"></script>
+	<script src="{% static 'home/js/main.js' %}"></script>
+
+	</body>
+</html>

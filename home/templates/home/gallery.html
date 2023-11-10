@@ -1,0 +1,43 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+	<!-- Header Section end -->
+	<section class="hero__section welcome">
+		Fotos Gallery
+	</section>
+
+	<!-- About Page -->
+	<div class="gallery__page">
+		<div class="gallery__warp">
+			<div class="row">
+
+			{% for image in image_names %}
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				{% if 'jpg' in image or 'jpeg' in image %}
+					<a class="gallery__item fresco" href="{% static image %}" data-fresco-group="gallery">
+						<img src="{% static image %}" alt="" loading="lazy">
+						<figcaption>{{image|slice:"17:"}}</figcaption>
+					</a>
+				{% else %}
+					<a class="gallery__item" href="">
+						<video width='350' preload="none" controls>
+							<source src='{% static image %}' type='video/mp4' loading="lazy">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+				{% endif %}
+			</div>
+			{% comment %} <div class="col-lg-3 col-md-4 col-sm-6">
+				<a class="gallery__item fresco" href="{% static 'home/img/gallery/'%}{{image}}" data-fresco-group="gallery">
+					<img src="{% static 'home/img/gallery/'%}{{image}}" alt="">
+				</a>
+			</div> {% endcomment %}
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+	<!-- About Page end -->
+
+{% endblock %}

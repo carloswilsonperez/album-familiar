@@ -1,0 +1,33 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+	<!-- About Page -->
+	<section class="about__page">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4 offset-lg-4">
+					<div class="about__text">
+						<h3 class="about__title">About Osito</h3>
+						<div class="about__meta">
+							<img src="{% static 'home/img/profile.jpg' %}" alt="">
+							<div class="about__meta__info">
+								<h5>Osito</h5>
+								<p>07/20/2022 - 09/29/2023</p>
+							</div>
+						</div>
+						<p class="quote">"If there are no dogs in Heaven, then when I die I want to go where they went." - <span class="author">Will Rogers</span></p>
+						<p class="description">This site belongs to the Osito Project. Osito was born in July 20, 2022, and passed away on September 29, 2023. The purpose of this video is not to make you feel sad. Instead, I would like to convey the happiness and rejoice that Osito brought to our lives.
+						<p class="description">I think dogs have a divine soul, and because of this, dogs have a great capacity for empathy and are so loyal and we are always blessed with their unconditional love.
+						<p class="description">If you are in a similar situation to mine, please don't be sad. I am sure you made your pet happy. If you are fortunate and still have your pet with you, please don't forget to hug and love your pet each and every day.
+						<p class="description">I cherish the day when I will see Osito again in Heaven.
+						<p class="description">This Project was created by Carlos A. Wilson on September 29, 2023</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About Page end -->
+
+{% endblock %}
