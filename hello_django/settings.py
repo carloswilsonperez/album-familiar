@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'hello_django.wsgi.application'
+WSGI_APPLICATION = 'family-album.wsgi.application'
 
 
 # Database
