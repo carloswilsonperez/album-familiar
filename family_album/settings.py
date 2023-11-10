@@ -22,14 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '52@y%9$#3#)9cff)jdcl&0-@4(u!y)dw@l2!e2s8!(jrrta_u+'
-# SECRET_KEY = os.getenv('SECRET_KEY')
+#SECRET_KEY = '52@y%9$#3#)9cff)jdcl&0-@4(u!y)dw@l2!e2s8!(jrrta_u+'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['*']
-#DEBUG = os.getenv('DEBUG')
-#ALLOWED_HOSTS = ['plankton-app-2hha3.ondigitalocean.app', 'www.the-osito-project.com', 'localhost', '127.0.0.1']
+# DEBUG = True
+# ALLOWED_HOSTS = ['*']
+DEBUG = os.getenv('DEBUG')
+ALLOWED_HOSTS = ['album-familiar-app-juiab.ondigitalocean.app', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -125,32 +125,31 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = Path(BASE_DIR).joinpath("staticfiles")
+#STATIC_URL = '/static/'
+#STATIC_ROOT = Path(BASE_DIR).joinpath("staticfiles")
 
 
 
 
-# STATICFILES_DIRS = (Path(BASE_DIR).joinpath("static"),)
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_DIRS = (Path(BASE_DIR).joinpath("static"),)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID1')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY1')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME1')
+AWS_DEFAULT_ACL = 'public-read' 
+AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL1')
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400'
+}
 
-# AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID1')
-# AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY1')
-# AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME1')
-# AWS_DEFAULT_ACL = 'public-read' 
-# AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL1')
-# AWS_S3_OBJECT_PARAMETERS = {
-#     'CacheControl': 'max-age=86400'
-# }
+AWS_S3_SIGNATURE_VERSION = os.getenv('AWS_S3_SIGNATURE_VERSION1')
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'staticfiles')
+MEDIA_URL =  'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'mediafiles')
+STATICFILES_STORAGE =  'custom_storage.StaticStorage'
+DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
 
-# AWS_S3_SIGNATURE_VERSION = os.getenv('AWS_S3_SIGNATURE_VERSION1')
-# STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'staticfiles')
-# MEDIA_URL =  'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, 'mediafiles')
-# STATICFILES_STORAGE =  'custom_storage.StaticStorage'
-# DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
-
-# AWS_STATIC_LOCATION = 'static'
+AWS_STATIC_LOCATION = 'static'
 
 
 
