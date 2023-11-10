@@ -1,6 +1,6 @@
 import os
 from django.shortcuts import render, redirect
-from hello_django import settings
+from family_album import settings
 
 
 def clean_file_name(file_name): 
