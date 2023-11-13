@@ -1,0 +1,7 @@
+home/img/gallery2020/.DS_Store
+home/img/gallery2020/2020-09-18 11.09.16.jpg
+home/img/gallery2020/2020-07-26 13.33.58.jpg
+home/img/gallery2020/2020-07-26 15.31.59.jpg
+home/img/gallery2020/2020-11-22 16.17.38.jpg
+home/img/gallery2020/2020-09-18 11.08.30.jpg
+home/img/gallery2020/2020-09-02 09.54.25.jpg
