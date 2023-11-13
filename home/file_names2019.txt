@@ -1,7 +1,6 @@
 home/img/gallery2019/2019-10-06 11.17.49.jpg
 home/img/gallery2019/2019-10-06 11.16.36.jpg
 home/img/gallery2019/2019-07-15 14.31.19.jpg
-home/img/gallery2019/.DS_Store
 home/img/gallery2019/2019-11-01 13.29.24.jpg
 home/img/gallery2019/2019-11-01 13.30.13.jpg
 home/img/gallery2019/2019-11-01 13.29.32.jpg

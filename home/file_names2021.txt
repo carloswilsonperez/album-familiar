@@ -3,7 +3,6 @@ home/img/gallery2021/2021-07-17 17.18.39.jpg
 home/img/gallery2021/2021-07-21 16.53.59.jpg
 home/img/gallery2021/2021-07-17 17.18.07.jpg
 home/img/gallery2021/2021-04-01 18.54.07.jpg
-home/img/gallery2021/.DS_Store
 home/img/gallery2021/2021-06-21 13.17.58.jpg
 home/img/gallery2021/2021-07-17 17.18.28.jpg
 home/img/gallery2021/2021-03-17 16.07.38.jpg
