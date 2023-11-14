@@ -16,7 +16,6 @@ home/img/gallery2023/20230418_122426.jpg
 home/img/gallery2023/20230418_122432.jpg
 home/img/gallery2023/20230507_125433.jpg
 home/img/gallery2023/20230607_151609.jpg
-home/img/gallery2023/20230521_181620.jpg
 home/img/gallery2023/20230909_104719.jpg
 home/img/gallery2023/IMG-20230106-WA0016.jpg
 home/img/gallery2023/IMG-20230106-WA0002.jpg
