@@ -68,7 +68,6 @@ def gallery(request):
     with open(os.path.join(os.path.dirname(__file__), 'family_names.txt'), 'r') as f:
         lines = f.readlines()
         image_list = list(map(clean_file_name, lines))
-        image_list = map(image_list, cdnUrl, yearId)
 
     image_list.sort()
     return render(request, 'home/family.html', context={ 'image_names': image_list })
