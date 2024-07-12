@@ -6,9 +6,21 @@ from family_album import settings
 def clean_file_name(file_name): 
     return file_name.replace('\n', '')
 
+def cdnUrl(url, year):
+    """_summary_
+    Returns:
+        string: Converts string from:
+            home/img/gallery2023/20230819_192908.jpg
+        to:
+        https://album-familiar-bucket.sfo3.cdn.digitaloceanspaces.com/album-familiar-bucket/staticfiles/home/img/gallery2023/20230819_192908.jpg
+        
+    """
+    
+    return "https://album-familiar-bucket.sfo3.cdn.digitaloceanspaces.com/album-familiar-bucket/staticfiles/home/img/gallery" + year + "/" + url.split("/")[3]
+
 # Create your views here.
 def home(request):
-    return render(request, 'home/index.html', context={ 'image': 'home/img/gallery/20230301-113253.jpg', 'page': 'home' })
+    return render(request, 'home/index.html', context={ 'image': 'https://album-familiar-bucket.sfo3.cdn.digitaloceanspaces.com/album-familiar-bucket/staticfiles/home/img/gallery/20230301-113253.jpg', 'page': 'home' })
 
 # ========================================================================================
 
@@ -56,6 +68,7 @@ def gallery(request):
     with open(os.path.join(os.path.dirname(__file__), 'family_names.txt'), 'r') as f:
         lines = f.readlines()
         image_list = list(map(clean_file_name, lines))
+        image_list = map(image_list, cdnUrl, yearId)
 
     image_list.sort()
     return render(request, 'home/family.html', context={ 'image_names': image_list })
@@ -71,6 +84,7 @@ def pictures2004(request):
     with open(os.path.join(os.path.dirname(__file__), 'file_names2004.txt'), 'r') as f:
         lines = f.readlines()
         image_list = list(map(clean_file_name, lines))
+        image_list = map(image_list, cdnUrl, 2004)
 
     image_list.sort()
     return render(request, 'home/2004.html', context={ 'image_names': image_list })
