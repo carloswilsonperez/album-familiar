@@ -68,7 +68,7 @@ def gallery(request):
     with open(os.path.join(os.path.dirname(__file__), 'family_names.txt'), 'r') as f:
         lines = f.readlines()
         image_list = list(map(clean_file_name, lines))
-        image_list = map(cdnUrl, image_list)
+        image_list = list(map(cdnUrl, image_list))
         print(image_list)
 
     image_list.sort()
