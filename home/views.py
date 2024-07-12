@@ -50,6 +50,8 @@ def gallery(request):
         with open(os.path.join(os.path.dirname(__file__), fileNames), 'r') as f:
             lines = f.readlines()
             image_list = list(map(clean_file_name, lines))
+            image_list = list(map(cdnUrl, image_list))
+            print(image_list)
             
         if (yearId == '2011n'):
             yearId = 'de Concurso de Belleza, Nov-2011'
