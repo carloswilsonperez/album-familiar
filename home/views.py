@@ -6,7 +6,7 @@ from family_album import settings
 def clean_file_name(file_name): 
     return file_name.replace('\n', '')
 
-def cdnUrl(url, year):
+def cdnUrl(url):
     """_summary_
     Returns:
         string: Converts string from:
@@ -16,7 +16,7 @@ def cdnUrl(url, year):
         
     """
     
-    return "https://album-familiar-bucket.sfo3.cdn.digitaloceanspaces.com/album-familiar-bucket/staticfiles/home/img/gallery" + year + "/" + url.split("/")[3]
+    return "https://album-familiar-bucket.sfo3.cdn.digitaloceanspaces.com/album-familiar-bucket/staticfiles/" + url
 
 # Create your views here.
 def home(request):
@@ -68,6 +68,8 @@ def gallery(request):
     with open(os.path.join(os.path.dirname(__file__), 'family_names.txt'), 'r') as f:
         lines = f.readlines()
         image_list = list(map(clean_file_name, lines))
+        image_list = map(cdnUrl, image_list)
+        print(image_list)
 
     image_list.sort()
     return render(request, 'home/family.html', context={ 'image_names': image_list })
