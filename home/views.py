@@ -20,7 +20,7 @@ def cdnUrl(url, year):
 
 # Create your views here.
 def home(request):
-    return render(request, 'home/index.html', context={ 'image': 'https://album-familiar-bucket.sfo3.cdn.digitaloceanspaces.com/album-familiar-bucket/staticfiles/home/img/gallery/20230301-113253.jpg', 'page': 'home' })
+    return render(request, 'home/index.html', context={ 'image': 'home/img/gallery/20230301-113253.jpg', 'page': 'home' })
 
 # ========================================================================================
 
